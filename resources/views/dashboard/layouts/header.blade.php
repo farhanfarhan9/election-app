@@ -4,11 +4,11 @@
     <!-- Header with logos -->
     <div class="navbar-header navbar-dark d-none d-md-flex align-items-md-center">
         <div class="navbar-brand navbar-brand-md">
-            <h5 class="d-inline-block">DRS</h5>
+            <h5 class="d-inline-block"></h5>
         </div>
         
         <div class="navbar-brand navbar-brand-xs">
-            <h5 class="d-inline-block">DRS</h5>
+            <h5 class="d-inline-block"></h5>
         </div>
     </div>
     <!-- /header with logos -->
@@ -17,7 +17,7 @@
     <!-- Mobile controls -->
     <div class="d-flex flex-1 d-md-none">
         <div class="navbar-brand mr-auto">
-            <h5 class="d-inline-block">DRS</h5>
+            <h5 class="d-inline-block"></h5>
         </div>	
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">

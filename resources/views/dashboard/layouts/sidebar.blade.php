@@ -87,12 +87,14 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a href="{{route('home.voters.index')}}" class="nav-link">
-                        <i class="icon-book3"></i>
-                        <span>Voters</span>
+                <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Admin</div> <i class="icon-menu" title="update"></i></li>  
+                <li class="nav-item">
+                    <a href="{{route('home.users.index')}}" class="nav-link">
+                        <i class="bi bi-person"></i>
+                        <span>Users</span>
                     </a>
                 </li>
+                {{-- 
                 <li class="nav-item">
                     <a href="{{route('home.voucher.index')}}" class="nav-link">
                         <i class="bi bi-ticket-perforated-fill"></i>

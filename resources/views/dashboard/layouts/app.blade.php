@@ -36,21 +36,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        @guest
-                        @else
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{route('home.index')}}">@lang('global.Dashboard.Data donasi') <span class="sr-only"></span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{route('home.donor.index')}}">@lang('global.Dashboard.Data donatur') <span class="sr-only"></span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{route('home.PaymentMethod.index')}}">@lang('global.Dashboard.Payment Method') <span class="sr-only"></span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{route('home.users.index')}}">Users <span class="sr-only"></span></a>
-                        </li>
-                        @endif
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->

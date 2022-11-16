@@ -33,40 +33,22 @@
       </div>
 
       <div class="card-body">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">No</th>
-              <th scope="col">Nama</th>
-              <th scope="col">Email</th>
-              <th scope="col">Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            @php $no=1 @endphp
-            @foreach($users as $user)
-            <tr>
-              <th scope="row">
-                <?= $no ?>
-              </th>
-              <td>{{$user->name}}</td>
-              <td>{{$user->email}}</td>
-              <td>
-                <div class="btn-group">
-                  <a class="btn btn-sm btn-success mr-1" href="{{route('home.users.edit', $user->id)}}">edit</a>
-                  <form method="POST" action="/home/users/{{ $user->id }}" >
-                    @csrf
-                    @method('DELETE')
-                    <div class="control">
-                    <button type="submit" class="btn btn-sm btn-danger" onClick="return confirm('Yakin ingin menghapus?')">Delete</button>
-                  </form>
-                </div>
-              </td>
-            </tr>
-            @php $no++; @endphp
-            @endforeach
-          </tbody>
-        </table>
+        <form method="post" action="/home/users">
+          @csrf
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nama</label>
+            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
   </div>
   <!-- /basic card -->
