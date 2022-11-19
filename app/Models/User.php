@@ -42,6 +42,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function election(){
-        return $this->hasMany(Election::class);
+        return $this->hasMany(Election::class, 'id', 'owner_id');
     }
 }

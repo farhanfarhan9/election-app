@@ -12,6 +12,6 @@ class Election extends Model
     protected $guarded = [];
 
     public function user(){
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class,'owner_id', 'id');
     }
 }
