@@ -94,13 +94,14 @@
                         <span>Users</span>
                     </a>
                 </li>
-                {{-- 
                 <li class="nav-item">
-                    <a href="{{route('home.voucher.index')}}" class="nav-link">
+                    <a href="{{route('home.elections.index')}}" class="nav-link">
                         <i class="bi bi-ticket-perforated-fill"></i>
-                        <span>Voucher</span>
+                        <span>Pemilihan</span>
                     </a>
                 </li>
+                {{-- 
+
                 <li class="nav-item">
                     <a href="{{route('home.answer.index')}}" class="nav-link">
                         <i class="bi bi-chat-left-text"></i>

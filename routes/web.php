@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\dashboard\ElectionController;
 use App\Http\Controllers\dashboard\UserController;
 use App\Http\Controllers\dashboard\DashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,7 @@ Route::group(['middleware' => 'auth','prefix'=>'home','as'=>'home.'], function()
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
     Route::resource('/users', UserController::class);
+    Route::resource('/elections', ElectionController::class);
 
 });
 
