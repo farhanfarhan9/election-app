@@ -38,7 +38,7 @@ class UserController extends Controller
         ]);
 
         $user->update($validated);
-        return back(); 
+        return redirect('/home/users');
     }
 
     public function destroy(User $user){
