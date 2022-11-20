@@ -14,4 +14,8 @@ class Election extends Model
     public function user(){
         return $this->belongsTo(User::class,'owner_id', 'id');
     }
+
+    public function candidates(){
+        return $this->hasMany(Candidates::class);
+    }
 }

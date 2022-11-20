@@ -20,6 +20,11 @@
                 <span>Elections</span>
             </a>
         </li>
-        
+        <li class="sidebar-item">
+            <a href="{{route('home.candidates.index')}}" class='sidebar-link'>
+                <i class="bi bi-person-workspace"></i>
+                <span>Candidates</span>
+            </a>
+        </li>
     </ul>
 </div>
