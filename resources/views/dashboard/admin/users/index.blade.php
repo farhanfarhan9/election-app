@@ -7,7 +7,7 @@
   <h4 class="card-title">Manage Users</h4>
 
   <div class="ms-auto mb-lg-0">
-    <a href="{{route('home.users.create')}}" class="btn btn-primary">Primary</a>
+    <a href="{{route('home.users.create')}}" class="btn btn-primary">Tambah User</a>
   </div>
 </div>
 <div class="card-body">

@@ -51,6 +51,7 @@ class ElectionController extends Controller
             'vote_end' => 'required',
         ]);
         $validated['owner_id'] = auth()->id();
+        $validated['election_code'] = str_split(mt_rand(), 6)[0];
 
         Election::create($validated);
         return redirect('/home/elections');
@@ -73,9 +74,9 @@ class ElectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Election $election)
     {
-        //
+        return view('dashboard.admin.elections.edit', compact('election'));
     }
 
     /**
@@ -85,9 +86,17 @@ class ElectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Election $election)
     {
-        //
+        $validated = $request->validate([
+            'name'=>'required',
+            'desc'=>'required',
+            'vote_start'=>'required',
+            'vote_end'=>'required',
+        ]);
+
+        $election->update($validated);
+        return redirect('/home/elections');
     }
 
     /**
@@ -96,8 +105,9 @@ class ElectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Election $election)
     {
-        //
+        $election->delete();
+        return redirect('/home/elections');
     }
 }

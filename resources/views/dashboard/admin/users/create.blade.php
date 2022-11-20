@@ -29,7 +29,7 @@
                 <div class="form-group">
                     <label for="contact-info-vertical">Password</label>
                     <input type="password" id="contact-info-vertical" class="form-control"
-                        name="password" placeholder="Mobile">
+                        name="password" placeholder="Password">
                 </div>
             </div>
             <div class="col-12 d-flex justify-content-end">

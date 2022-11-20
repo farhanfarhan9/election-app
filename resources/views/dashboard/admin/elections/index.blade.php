@@ -7,7 +7,7 @@
   <h4 class="card-title">Manage Elections</h4>
 
   <div class="ms-auto mb-lg-0">
-    <a href="{{route('home.elections.create')}}" class="btn btn-primary">Primary</a>
+    <a href="{{route('home.elections.create')}}" class="btn btn-primary">Tambah Pemilihan</a>
   </div>
 </div>
 <div class="card-body">
@@ -18,6 +18,7 @@
               <th>No</th>
               <th>Nama</th>
               <th>Deskripsi</th>
+              <th>Kode pemilihan</th>
               <th>Voting dimulai</th>
               <th>Voting berakhir</th>
               @if(Auth::user()->email==='admin@admin.com')
@@ -33,6 +34,7 @@
                 <td>{{$no}}</td>
                 <td>{{$election->name}}</td>
                 <td>{{$election->desc}}</td>
+                <td>{{$election->election_code}}</td>
                 <td>{{$election->vote_start}}</td>
                 <td>{{$election->vote_end}}</td>
                 @if(Auth::user()->email==='admin@admin.com')
@@ -41,7 +43,7 @@
                 <td>
                   <div class="btn-group">
                     <a href="{{route('home.elections.edit', $election->id)}}" class="btn btn-success">Edit</a>
-                    <form method="POST" action="/home/election/{{ $election->id }}" >
+                    <form method="POST" action="/home/elections/{{ $election->id }}" >
                       @csrf
                       @method('DELETE')
                       <div class="control">

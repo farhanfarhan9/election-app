@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="card-header">
-  <h4 class="card-title">Add Users</h4>
+  <h4 class="card-title">Edit Users</h4>
 </div>
 <div class="card-body">
   <form method="post" action="/home/users/{{$user->id}}">
