@@ -96,10 +96,10 @@ class CandidateController extends Controller
      */
     public function update(Request $request, Candidate $candidate)
     {
+        // dd($request->all());
         $validated = $request->validate([
             'name' => ['required', 'min:3', 'max:50'],
             'desc' => ['required', 'min:3', 'max:255'],
-            'picture' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
             'election_id'=>['required']
         ]);
 
