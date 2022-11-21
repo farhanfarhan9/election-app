@@ -50,9 +50,14 @@
 @section('more-js')
 <script>
 $(document).ready(function() {
+    $.validator.addMethod("noSpace", function(value, element){
+      return value ==''||value.trim().length !=0
+    }, "Harap mengisi karakter dengan benar");
+
     $('#editElection').validate({
         rules: {
           name: {
+            noSpace: true,
             required: true,
             minlength: 5
           },

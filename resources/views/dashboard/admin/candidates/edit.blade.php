@@ -109,3 +109,15 @@ $(document).ready(function() {
     });
 });
 </script>
+<script>
+// $(document).ready(function() {
+//     $('#editCandidate').validate({
+//         rules: {
+//           name: {
+//             required: true,
+//             minlength: 5
+//           },
+//         },
+//     });
+// }); </script>
+@endsection

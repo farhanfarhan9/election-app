@@ -126,7 +126,8 @@
     <script src="{{asset('assets/js/app.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
-    <script src="{{asset('assets/js/pages/jquery-validate.js')}}"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/additional-methods.js"></script>
+    <script src="{{asset('assets/js/pages/jquery-file-validate.js')}}"></script>
     @yield('more-js')
 </body>
 </html>

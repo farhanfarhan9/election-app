@@ -52,9 +52,14 @@
 @endsection
 @section('more-js')
 <script>
-$.validator.addMethod('filesize', function (value, element, param) {
-    return this.optional(element) || (element.files[0].size <= param * 1000000)
-});
+$.validator.addMethod('filesize', function(value, element, param) {
+  return this.optional(element) || (element.files[0].size <= param)
+}, 'File size must be less than {0} bytes');
+
+$.validator.addMethod("noSpace", function(value, element){
+  return value ==''||value.trim().length !=0
+}, "Harap mengisi karakter dengan benar");
+
 $(document).ready(function() {
     $('#createCandidate').validate({
         rules: {
@@ -62,6 +67,7 @@ $(document).ready(function() {
             required: true,
           },
           name: {
+            noSpace: true,
             required: true,
             minlength: 3
           },
@@ -70,9 +76,9 @@ $(document).ready(function() {
             minlength: 10
           },
           picture: {
+            filesize: 224288,
             required: true,
-            extension: "jpeg|png|jpg",
-            filesize:2
+            extension: "jpeg|png|jpg"
           }
         },
         messages:{
@@ -88,7 +94,7 @@ $(document).ready(function() {
             minlength: "Minimal menggunakan 10 karakter"
           },
           picture:{
-            required: "Mohon upload file berupa gambar dengan ekstensi jpg, png atau jpeg",
+            required: "Mohon upload file berupa gambar kandidat",
             extension: "Mohon upload file berupa gambar dengan ekstensi jpg, png atau jpeg",
             filesize: "Ukuran gambar maksimal adalah 2MB"
           }
