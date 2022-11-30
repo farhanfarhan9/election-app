@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\voter\VoterController;
 use App\Http\Controllers\dashboard\UserController;
 use App\Http\Controllers\dashboard\ElectionController;
 use App\Http\Controllers\dashboard\CandidateController;
@@ -24,6 +25,11 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+Route::get('/register-voter', [VoterController::class, 'create'])->name('register_voter');
+Route::get('/login-voter', [VoterController::class, 'login'])->name('login_voter');
+Route::post('/register-voter', [VoterController::class, 'register'])->name('store_register_voter');
+Route::post('/authenticate', [VoterController::class, 'authenticate'])->name('authenticate_voter');
 
 Route::group(['middleware' => 'auth','prefix'=>'home','as'=>'home.'], function(){
     Route::get('/', [DashboardController::class, 'index'])->name('index');

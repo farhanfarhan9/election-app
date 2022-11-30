@@ -25,11 +25,18 @@
           @else
           @if (Route::has('register'))
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('register') }}">Register</a>
+              <a class="nav-link" href="{{ route('register_voter') }}">Register</a>
             </li>
           @endif
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">Login</a>
+          <li class="nav-item dropdown">
+            {{-- <a class="nav-link" href="{{ route('login') }}">Login</a> --}}
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Login
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ route('login') }}">Penyelenggara</a></li>
+              <li><a class="dropdown-item" href="{{ route('login_voter') }}">Peserta</a></li>
+            </ul>
           </li>
           @endauth
         </ul>

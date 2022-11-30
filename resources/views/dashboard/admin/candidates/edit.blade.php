@@ -83,7 +83,7 @@ $(document).ready(function() {
             required: "Pilih salah satu kategori pemilihan",
           },
           name: {
-            required: "Mohon masukkan name kandidat",
+            required: "Mohon masukkan nama kandidat",
             minlength: "Minimal menggunakan 3 karakter"
           },
           desc:{
@@ -119,5 +119,6 @@ $(document).ready(function() {
 //           },
 //         },
 //     });
-// }); </script>
+// });
+ </script>
 @endsection
