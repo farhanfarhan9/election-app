@@ -33,10 +33,11 @@ Route::post('/authenticate', [VoterController::class, 'authenticate'])->name('au
 
 Route::group(['middleware' => 'auth','prefix'=>'home','as'=>'home.'], function(){
     Route::get('/', [DashboardController::class, 'index'])->name('index');
-
     Route::resource('/users', UserController::class);
     Route::resource('/elections', ElectionController::class);
     Route::resource('/candidates', CandidateController::class);
-
 });
 
+Route::group(['prefix'=>'voter', 'as'=>'voter.'], function(){
+    Route::get('/', [VoterController::class, 'index'])->name('index');
+});

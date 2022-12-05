@@ -5,6 +5,7 @@ namespace App\Http\Controllers\voter;
 use App\Models\Voter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class VoterController extends Controller
@@ -13,6 +14,10 @@ class VoterController extends Controller
     // {
     //     $this->middleware('auth:voter');
     // }
+
+    public function index(){
+        return view('dashboard.voter.index');
+    }
 
     public function create(){
         return view('voterauth.index');
@@ -30,7 +35,7 @@ class VoterController extends Controller
 
         $voter = Voter::create($validated);
         auth()->login($voter);
-        return redirect('/home');
+        return redirect('/voter');
     }
 
     public function login(){
@@ -43,10 +48,10 @@ class VoterController extends Controller
             'password'=>'required',
         ]);
 
-        if(auth()->attempt($validated)){
+        if(Auth::guard('voter')->attempt($validated)){
             $request->session()->regenerate();
 
-            return redirect('/home');
+            return redirect('/voter');
         }
 
         // return back();

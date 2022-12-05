@@ -17,7 +17,7 @@ class Voter extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $guard = 'voters';
+    protected $guard = 'voter';
     protected $fillable = [
         'name',
         'email',
